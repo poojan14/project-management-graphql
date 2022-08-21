@@ -1,5 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import Spinner from '../components/Spinner';
 import ClientInfo from '../components/ClientInfo';
 import DeleteProjectButton from '../components/DeleteProjectButton';
 import EditProjectForm from '../components/EditProjectForm';
@@ -10,7 +9,6 @@ export default function Project() {
   const { id } = useParams();
   const { loading, error, data } = useQuery(GET_PROJECT, { variables: { id } });
 
-  if (loading) return <Spinner />;
   if (error) return <p>Something Went Wrong</p>;
 
   return (
